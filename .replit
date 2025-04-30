@@ -2,3 +2,15 @@ modules = ["go-1.21", "web"]
 
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+runButton = "Run KrillinAI"
+
+[[workflows.workflow]]
+name = "Run KrillinAI"
+author = 42107861
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd KrillinAI-master/cmd/desktop && go run main.go"

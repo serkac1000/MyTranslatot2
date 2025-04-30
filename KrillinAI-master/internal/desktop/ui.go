@@ -21,10 +21,10 @@ import (
 	"go.uber.org/zap"
 )
 
-// 创建配置界面
+// Create configuration interface
 func CreateConfigTab(window fyne.Window) fyne.CanvasObject {
-	// 创建页面标题
-	pageTitle := TitleText("应用配置")
+	// Create page title
+	pageTitle := TitleText("Application Configuration")
 
 	// app 配置
 	appGroup := createAppConfigGroup()
@@ -179,11 +179,11 @@ func createAppConfigGroup() *fyne.Container {
 
 	// 格式化表单项以使其更美观
 	form := widget.NewForm(
-		widget.NewFormItem("字幕分段处理时长(分钟) Segment duration (minutes)", appSegmentDurationEntry),
-		widget.NewFormItem("翻译并行数量 Translate parallel num", appTranslateParallelNumEntry),
-		widget.NewFormItem("网络代理地址 proxy", appProxyEntry),
-		widget.NewFormItem("语音识别服务源 Transcriber provider", appTranscribeProviderEntry),
-		widget.NewFormItem("LLM服务源 Llm provider", appLlmProviderEntry),
+		widget.NewFormItem("Segment Duration (minutes)", appSegmentDurationEntry),
+		widget.NewFormItem("Parallel Translation Count", appTranslateParallelNumEntry),
+		widget.NewFormItem("Network Proxy Address", appProxyEntry),
+		widget.NewFormItem("Transcriber Provider", appTranscribeProviderEntry),
+		widget.NewFormItem("LLM Provider", appLlmProviderEntry),
 	)
 
 	return GlassCard("应用配置 App Config", "基本参数 Basic config", form)
